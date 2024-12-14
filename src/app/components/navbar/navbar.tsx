@@ -30,13 +30,13 @@ const NavBar = () => {
               >
                 Records
               </Link>
-              <Link 
+              {/* <Link 
                 onClick={() => setPage("Edit")} 
                 href="/edit" 
                 className="text-white hover:bg-green-500 px-3 py-2 rounded-md text-sm font-medium"
               >
                 Edit
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
@@ -78,13 +78,13 @@ const NavBar = () => {
             >
               Records
             </Link>
-            <Link 
+            {/* <Link 
               onClick={() => setPage("Edit")} 
               href="/edit"  
               className="text-white hover:bg-green-500 block px-3 py-2 rounded-md text-base font-medium"
             >
               Edit
-            </Link>
+            </Link> */}
           </div>
         </div>
       )}

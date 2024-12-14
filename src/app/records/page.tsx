@@ -1,5 +1,5 @@
 "use client"; // Ensure this is a client-side component to use React state
-
+import Link from "next/link";
 import { useState } from "react";
 import { Tree, TreeCard } from "../components/cards/tree";
 
@@ -126,9 +126,11 @@ export default function Page() {
       <div className="container mx-auto p-4">
         <div className="flex justify-between items-center mb-4">
           <div className="text-xl font-semibold">Tree Records</div>
-          <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition">
-            + Add Tree
-          </button>
+            <Link href="/records/add">
+                <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition">
+                    + Add Tree
+                </button>
+            </Link>
         </div>
   
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -177,21 +179,43 @@ export default function Page() {
                     className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                   />
                 </div>
+                <div className="mt-4">
+                    <label className="block text-sm font-medium text-gray-700">
+                        Description
+                    </label>
+                    <textarea
+                        defaultValue={"None"}
+                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                        rows={3} // You can adjust the number of rows to control the height of the textarea
+                    />
+                </div>
+
                 {/* Add other fields as needed */}
-                <div className="mt-4 flex justify-end">
-                  <button
-                    type="button"
-                    className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md mr-2"
-                    onClick={closeModal}
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md"
-                  >
-                    Save
-                  </button>
+                <div className="flex justify-between">
+                    <button
+                        type="button"
+                        className="mt-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md mr-2"
+                        // onClick={}
+                    >
+                        Delete
+                    </button>
+                    <div className="mt-4 flex justify-end">
+                    <button
+                        type="button"
+                        className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md mr-2"
+                        onClick={closeModal}
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        type="submit"
+                        className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md"
+                        // onClick={}
+                        >
+                        Save
+
+                    </button>
+                    </div>
                 </div>
               </form>
             </div>

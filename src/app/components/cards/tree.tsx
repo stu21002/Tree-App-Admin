@@ -3,8 +3,9 @@ export type Tree = {
     commonName: string;
     genus: string;
     species: string;
-    subSpecies?: string;
+    subSpecies?: string | null;
     family: string;
+    description?: string | null
     floweringStart?: string | null;
     floweringEnd?: string | null;   
     fruitStart: string; 
